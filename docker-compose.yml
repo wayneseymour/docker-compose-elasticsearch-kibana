@@ -38,6 +38,9 @@ services:
         max_attempts: 3
         window: 10s
     volumes:
+      - type: bind
+        source: ./usr/share/elasticsearch/config
+        target: /usr/share/elasticsearch/config
       - type: volume
         source: logs
         target: /var/log
