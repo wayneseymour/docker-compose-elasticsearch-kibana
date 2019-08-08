@@ -39,7 +39,7 @@ services:
         window: 10s
     volumes:
       - type: bind
-        source: ./usr/share/elasticsearch/config
+        source: ./configs/1/usr/share/elasticsearch/config
         target: /usr/share/elasticsearch/config
       - type: volume
         source: logs
@@ -92,6 +92,9 @@ services:
         max_attempts: 3
         window: 10s
     volumes:
+      - type: bind
+        source: ./configs/2/usr/share/elasticsearch/config
+        target: /usr/share/elasticsearch/config
       - type: volume
         source: logs
         target: /var/log
@@ -142,6 +145,9 @@ services:
         max_attempts: 3
         window: 10s
     volumes:
+      - type: bind
+        source: ./configs/3/usr/share/elasticsearch/config
+        target: /usr/share/elasticsearch/config
       - type: volume
         source: logs
         target: /var/log
