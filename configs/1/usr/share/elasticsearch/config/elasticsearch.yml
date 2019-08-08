@@ -1,2 +1,14 @@
 cluster.name: "docker-cluster"
-network.host: 0.0.0.0
+# network.host: 0.0.0.0
+network.host: _site_
+xpack.security.enabled: true
+xpack.security.transport.ssl.enabled: true
+node.name: elasticsearch1
+discovery.seed_hosts:
+   - 172.23.0.5:9300
+   - 172.23.0.2:9200
+   - 172.23.0.3:9200
+cluster.initial_master_nodes: 
+   - elasticsearch1
+   - elasticsearch2
+   - elasticsearch3
